@@ -1,0 +1,34 @@
+.heading {
+  color: #363636;
+  display: inline-block;
+  composes: sans-serif from '@xo-union/tk-css-typography';
+  font-size: 30px;
+}
+
+.xo-logo {
+  display: inline-block;
+  font-size: 30px;
+  margin-left: 0 10px;
+  vertical-align: middle;
+  color:#363636;
+}
+
+.heart {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 30px;
+  vertical-align: middle;
+  color: #fe8c00; /* fallback for old browsers */
+}
+
+.center {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.appWrapper{
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: center;
+  margin-top: 30vh;
+}

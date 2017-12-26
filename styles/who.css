@@ -1,0 +1,26 @@
+.appWrapper{
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: center;
+  margin-top: 30vh;
+}
+
+.test {
+  background: red;
+  height: 20px;
+  width: 20px;
+}
+
+.question {
+  font-size: 36px;
+  margin: 20px;
+  composes: sans-serif from '@xo-union/tk-css-typography';
+}
+
+
+.appWrapper{
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: center;
+  margin-top: 30vh;
+}
