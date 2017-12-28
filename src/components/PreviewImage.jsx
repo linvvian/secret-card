@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import Draggable from 'react-draggable'
+import { Textarea } from '@xo-union/tk-component-fields';
 import styles from '../../styles/previewImage.css'
+import button from '../../styles/common/button.css';
 
 class PreviewImage extends Component {
   state = {
-    defaultPosition: { x: 0, y: 0 },
+    defaultPosition: { x: -350, y: -500 },
     isDone: false,
     isDisabled: false,
     position: {},
@@ -12,25 +14,21 @@ class PreviewImage extends Component {
   }
 
   recordPosition = (e) => {
-    const { x, y } = e
-    this.setState({ position: { x, y }})
+    const x = e.clientX,
+          y = e.clientY
+    this.setState({ position: { x, y } });
   }
 
   saveImage = () => {
     const message = window.document.getElementById('image_message').value
     this.setState({ isDone: true, message: message })
     const image = { position: this.state.position, message: message, src: this.props.src }
-    console.log("preview image save button hit", image)
     this.props.saveImageMessage(image)
   }
 
   renderWhat = () => {
-    return (this.state.isDone) ? <div>{this.state.message}</div> : <span><input id='image_message' placeholder='your message' />
-    <div><button onClick={this.saveImage}>Save</button></div></span>
-  }
-
-  recordOnDrag = (e) => {
-    console.log("on drag", e)
+    return (this.state.isDone) ? <div className={styles.imageMessage}>{this.state.message}</div> : <span><Textarea id='image_message' name='your message' />
+    <div><button className={button['fancy-button']} onClick={this.saveImage}>Save</button></div></span>
   }
 
   render() {

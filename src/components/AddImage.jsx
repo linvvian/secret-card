@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PreviewImage from './PreviewImage'
-import { Field, FieldGroup } from '@xo-union/tk-component-fields';
+import { Field, FormTheme, FieldGroup } from '@xo-union/tk-component-fields';
 import styles from '../../styles/addImage.css'
+import button from '../../styles/common/button.css';
 
 export default class AddImage extends Component {
   state = {
@@ -11,6 +12,7 @@ export default class AddImage extends Component {
 
   addImage = (e) => {
     let src = window.document.getElementById('src').value
+    window.document.getElementById('src').value = ''
     this.setState({
       src: src,
       showPreview: true,
@@ -18,7 +20,7 @@ export default class AddImage extends Component {
   }
 
   saveImageMessage = (imgObj) => {
-    console.log("in add image saving image message", imgObj)
+    this.setState({ showPreview: false })
     this.props.finalizeImages(imgObj)
   }
 
@@ -27,10 +29,16 @@ export default class AddImage extends Component {
     return (
       <div className={styles.imageWrapper}>
         <div className={styles.optionsWrapper}>
-          <FieldGroup>
-            <input id='src' type='text' />
-            <button onClick={this.addImage}>Enter</button>
-          </FieldGroup>
+            <div>
+              <FormTheme name='white'>
+                <FieldGroup>
+                 <Field id='src' name='GIF link' />
+                 </FieldGroup>
+              </FormTheme>
+            </div>
+            <div className={styles.center}>
+              <button className={button['fancy-button']} onClick={this.addImage}>Enter</button>
+            </div>
         </div>
         { this.state.showPreview && <PreviewImage saveImageMessage={this.saveImageMessage} src={src} /> }
       </div>

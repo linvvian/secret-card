@@ -12,3 +12,9 @@
   margin: auto;
   width: 50%;
 }
+
+.center {
+  margin: auto;
+  width: 15%;
+  margin-top: 24px;
+}

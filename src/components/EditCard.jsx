@@ -33,8 +33,9 @@ class EditCard extends Component {
   }
 
   recordPosition = (e) => {
+    const dragMessage = document.getElementById('friendMessage')
     const x = e.screenX,
-          y = e.screenY
+          y = e.clientY
     this.setState({ position: { x, y } });
   }
 
@@ -81,6 +82,7 @@ class EditCard extends Component {
   }
 
   render() {
+    console.log(this.props.name)
     const { personalMessages, imageMessages } = this.props;
     return(
       <div className={styles.cupcake}>
@@ -106,7 +108,7 @@ class EditCard extends Component {
               position={message.position}
               disabled={true}
             >
-              <div>{message.currentMessage}</div>
+              <div className={styles.messagesRendered}>{message.currentMessage}</div>
             </Draggable>
           </div>
         ))}
@@ -120,7 +122,7 @@ class EditCard extends Component {
             <div className={imageCard.imageCard}>
               <div className={imageCard.cardContent}>
                 <img className={styles.imageMessages} src={img.src} />
-                <div>{img.message}</div>
+                <div className={styles.imageMessage}>{img.message}</div>
               </div>
             </div>
           </Draggable>
