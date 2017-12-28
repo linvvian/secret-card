@@ -4,8 +4,13 @@ import { Textarea, FieldGroup } from '@xo-union/tk-component-fields';
 import button from '../../styles/common/button.css';
 
 export default class AddMessage extends Component {
+  state = {
+    showDoneBtn: false,
+  }
+
   createMessage = () => {
     let msg = document.getElementById('friendMessage').value;
+    this.setState({ showDoneBtn: true })
     this.props.updateMessage(msg);
   }
 
@@ -17,7 +22,8 @@ export default class AddMessage extends Component {
         </FieldGroup>
         <div className={styles.centerAgain}>
           <button className={button['fancy-button']} onClick={this.createMessage}>Preview</button>
-          <button className={button['fancy-button']} onClick={this.props.finalizeState}>Done</button>
+          { this.state.showDoneBtn
+            && <button className={button['fancy-button']} onClick={this.props.finalizeState}>Done</button> }
         </div>
       </div>
     );
