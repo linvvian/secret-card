@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import Draggable from 'react-draggable'
+import styles from '../../styles/editCard.css'
 
 class PreviewMessage extends Component {
   state = {
-    defaultPosition: { x: 0, y: 0 }
-  }
-
-  componentWillUnMount = () => {
-    this.setState({ defaultPosition: { x: 0, y: 0 } })
+    defaultPosition: { x: 0, y: -600 }
   }
 
   render() {
@@ -18,7 +15,7 @@ class PreviewMessage extends Component {
           defaultPosition={this.state.defaultPosition}
           onDrag={recordPosition}
           >
-            <div className="currentMessage">{currentMessage}</div>
+            <div className={styles.messagesRendered}>{currentMessage}</div>
           </Draggable>
         </div>
       )

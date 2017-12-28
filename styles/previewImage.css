@@ -10,3 +10,8 @@
   align-items: center;
   text-align: center;
 }
+
+.imageMessage {
+  margin: 5px;
+  white-space: pre-line;
+}

@@ -9,11 +9,6 @@
   width: 50%;
 }
 
-.imageMessages {
-  max-width: 300px;
-  max-height: 300px;
-}
-
 .linkText {
   display: inline-block;
   margin: 0 50px;
@@ -66,4 +61,18 @@
   margin: auto;
   border-radius: 5px;
   padding: 10px 0;
+}
+
+.messagesRendered {
+  white-space: pre-line;
+}
+
+.imageMessages {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.imageMessage {
+  margin: 5px;
+  white-space: pre-line;
 }
