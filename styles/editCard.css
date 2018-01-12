@@ -16,15 +16,6 @@
   color: black;
 }
 
-.cupcake {
-  /* background-image: url('http://cdn.pcwallart.com/images/happy-birthday-cupcake-wallpaper-2.jpg');
-  height: 1000px;
-  width: 2000px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; */
-}
-
 .birthdayHeading {
   margin: auto;
   text-align: center;
@@ -33,11 +24,37 @@
   height: 400px;
   background-color: #ece7e7;
   border-radius: 5px;
-  /* background-image: url('http://cdn.pcwallart.com/images/happy-birthday-cupcake-wallpaper-2.jpg'); */
-  background-image: url('https://c1.staticflickr.com/5/4088/5222849896_802c5f0754_b.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.headbgk1 {
+  background-image: url('https://c1.staticflickr.com/5/4088/5222849896_802c5f0754_b.jpg');
+}
+
+.headbgk2 {
+  background-image: url('https://st3.depositphotos.com/1177973/12632/i/950/depositphotos_126325932-stock-photo-many-cats-background.jpg');
+}
+
+.headbgk3 {
+  background-image: url('https://image.freepik.com/free-photo/white-paper-background_1154-683.jpg');
+}
+
+.headbgk4 {
+  background-image: url('https://image.freepik.com/free-vector/abstract-blurred-gradient-mesh-background_1159-3175.jpg');
+}
+
+.headbgk5 {
+  background-image: url('http://images.all-free-download.com/images/graphiclarge/pets_background_dogs_bone_icons_decoration_repeating_style_6828678.jpg');
+}
+
+.headbgk6 {
+  background-image: url('http://www.azwishes.com/wp-content/uploads/2015/12/Get-Well-Soon-Wish-With-Pink-Background.jpg');
+}
+
+.headbgk7 {
+  background-image: url('http://cdn.pcwallart.com/images/happy-birthday-cupcake-wallpaper-2.jpg');
 }
 
 .links {

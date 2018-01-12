@@ -81,17 +81,38 @@ class EditCard extends Component {
     return (this.state.showPreview) ? <PreviewMessage recordPosition={this.recordPosition} currentMessage={this.state.currentMessage} /> : null
   }
 
+  whichBackground = () => {
+    const bkg = this.props.background
+    switch (bkg) {
+      case 'bgk1':
+        return styles.headbgk1
+      case 'bgk2':
+        return styles.headbgk2
+      case 'bgk3':
+        return styles.headbgk3
+      case 'bgk4':
+        return styles.headbgk4
+      case 'bgk5':
+        return styles.headbgk5
+      case 'bgk6':
+        return styles.headbgk6
+      default:
+        return styles.headbgk7
+    }
+  }
+
   render() {
-    console.log(this.props.name)
     const { personalMessages, imageMessages } = this.props;
+    const bkgHeading = this.whichBackground()
     return(
       <div className={styles.cupcake}>
       {/* <div className={styles.links}>
         <div className={styles.linkText}>Pass this card around to others:<span className={styles.linksBlue}>bit.ly/Klu/f138 </span></div>
         <div className={styles.linkText}>Send the final card:<span className={styles.linksBlue} >xoxo.Happy-Birthday-Peter/ </span></div>
       </div> */}
-        <div className={styles.birthdayHeading}>
-        <div className={styles.birthdayTextBox}>
+
+        <div className={[styles.birthdayHeading, bkgHeading].join(' ')}>
+          <div className={styles.birthdayTextBox}>
             <h1>{this.props.mainMessage}</h1>
             <h1>{this.props.name}!</h1>
             <p>xoxo, your friends and family at XO Group</p>

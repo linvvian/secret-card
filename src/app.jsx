@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Navigation from './components/Navigation';
 import 'styles/index.css';
 
 export default class App extends Component {
@@ -16,11 +15,6 @@ export default class App extends Component {
 
     return (
       <div className='App'>
-        <Navigation/>
-        <div>
-          <h1>{this.props.name}</h1>
-          <p>{this.props.mainMessage}</p>
-        </div>
       </div>
     );
   }
