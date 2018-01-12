@@ -14,8 +14,8 @@ class PreviewImage extends Component {
   }
 
   recordPosition = (e) => {
-    const x = e.clientX,
-          y = e.clientY
+    const { x, y } = e.toElement.getBoundingClientRect()
+    
     this.setState({ position: { x, y } });
   }
 

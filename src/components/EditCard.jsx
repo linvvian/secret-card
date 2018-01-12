@@ -33,9 +33,8 @@ class EditCard extends Component {
   }
 
   recordPosition = (e) => {
-    const dragMessage = document.getElementById('friendMessage')
-    const x = e.screenX,
-          y = e.clientY
+    const { x, y } = e.toElement.getBoundingClientRect()
+
     this.setState({ position: { x, y } });
   }
 
@@ -101,15 +100,29 @@ class EditCard extends Component {
     }
   }
 
+  slugIT = () => {
+    const { mainMessage, name } = this.props
+    let message = mainMessage.split(' ').join('-')
+    let theName = name.split(' ').join('-')
+    return `${message}-${theName}`
+  }
+
+  renderLinks = () => {
+    if (this.state.inputWhat === 'done') return null
+    return (
+      <div className={styles.links}>
+        <div className={styles.linkText}>Pass this card around to others:<span className={styles.linksBlue}>bit.ly/Klu/f138 </span></div>
+        <div className={styles.linkText}>Send the final card:<span className={styles.linksBlue} >xoxo.{this.slugIT()}/ </span></div>
+      </div>
+    )
+  }
+
   render() {
     const { personalMessages, imageMessages } = this.props;
     const bkgHeading = this.whichBackground()
     return(
       <div className={styles.cupcake}>
-      {/* <div className={styles.links}>
-        <div className={styles.linkText}>Pass this card around to others:<span className={styles.linksBlue}>bit.ly/Klu/f138 </span></div>
-        <div className={styles.linkText}>Send the final card:<span className={styles.linksBlue} >xoxo.Happy-Birthday-Peter/ </span></div>
-      </div> */}
+      {this.renderLinks()}
 
         <div className={[styles.birthdayHeading, bkgHeading].join(' ')}>
           <div className={styles.birthdayTextBox}>

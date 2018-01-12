@@ -10,7 +10,7 @@ class PreviewMessage extends Component {
   render() {
     const { recordPosition, currentMessage } = this.props
     return(
-      <div>
+      <div id='messageInDrag'>
         <Draggable
           defaultPosition={this.state.defaultPosition}
           onDrag={recordPosition}
