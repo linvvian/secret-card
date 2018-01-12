@@ -16,11 +16,7 @@ class Routes extends Component {
   state = {
     name: 'Stephanie',
     mainMessage: 'Happy Birthday',
-    personalMessages: [{
-      currentMessage: 'HAPPY BIRTHDAY!',
-      // position: 'translate(120px, 200px)'
-      position: { x: 140, y: 420 }
-    }, { currentMessage: 'SO HAPPY FOR YOU STEPHANIE!', position: { x: 200, y: 600 } }],
+    personalMessages: [],
     imageMessages: [],
     background: ''
   }
