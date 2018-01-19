@@ -8,6 +8,10 @@ import button from '../../styles/common/button.css';
 import styles from '../../styles/editCard.css'
 import * as imageCard from '../../styles/previewImage.css'
 
+import { connect } from 'react-redux'
+import types from '../store/types'
+import updateState from '../store/action'
+
 class EditCard extends Component {
   componentWillMount() {
     this.setState({
@@ -21,10 +25,9 @@ class EditCard extends Component {
 
   handleButtonClick = () => {
     const message = { currentMessage: this.state.currentMessage, position: this.state.position }
-    console.log("on done", message)
     this.props.updateState({
       personalMessages: [ ...this.props.personalMessages, message ]
-    })
+    }, types.ADDMESSAGE)
     this.setState({
       currentMessage: '',
       showPreview: false,
@@ -43,7 +46,7 @@ class EditCard extends Component {
   }
 
   finalizeImages = (image) => {
-    this.props.updateState({ imageMessages: [ ...this.props.imageMessages, image ] })
+    this.props.updateState({ imageMessages: [ ...this.props.imageMessages, image ] }, types.ADDIMAGE)
   }
 
   toggleInput = () => {
@@ -168,4 +171,8 @@ class EditCard extends Component {
   }
 }
 
-export default EditCard
+const mapStateToProps = (state) => {
+  return state
+}
+
+export default connect(mapStateToProps, { updateState })(EditCard)

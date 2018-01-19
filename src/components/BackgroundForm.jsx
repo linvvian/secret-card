@@ -4,8 +4,11 @@ import styles from '../../styles/background.css';
 import button from '../../styles/common/button.css';
 import who from '../../styles/who.css';
 
+import { connect } from 'react-redux'
+import types from '../store/types'
+import updateState from '../store/action'
 
-export default class BackgroundForm extends Component {
+class BackgroundForm extends Component {
 
   constructor(props) {
     super(props);
@@ -35,7 +38,7 @@ export default class BackgroundForm extends Component {
       bgName = selectedBackgroundDiv.getAttribute('data-bg');
     }
 
-    this.props.updateState({background: bgName });
+    this.props.updateState({background: bgName }, types.SETBACKGROUND);
   }
 
   render () {
@@ -55,3 +58,5 @@ export default class BackgroundForm extends Component {
     );
   }
 }
+
+export default connect(null, { updateState })(BackgroundForm)
